@@ -4,6 +4,10 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Profile
+import logging
+
+logger = logging.getLogger(__name__)
+logger.debug('This is a debug message') #only for testing delete after
 
 # Create your views here.
 
@@ -14,7 +18,7 @@ def index(request):
 @login_required(login_url='signin')
 def settings(request):
     user_profile = Profile.objects.get(user=request.user)
-
+    
     if request.method == 'POST':
 
         if request.FILES.get('image') == None:
@@ -36,8 +40,8 @@ def settings(request):
             user_profile.bio = bio
             user_profile.location = location
             user_profile.save()
-        
-        return redirect('settings')
+            
+            return redirect('settings')
 
 
 
@@ -88,7 +92,7 @@ def signin(request):
 
         if user is not None:
             auth.login(request,user)
-            return redirect('index')
+            return redirect('/')
         else:
             messages.info(request, 'credentials invalid')
             return redirect('signin')
