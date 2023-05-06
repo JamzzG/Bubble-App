@@ -9,6 +9,8 @@
   font-style: normal;
 }
 
+sourceMappingURL=icons.css.map
+
 [class^="icon-feather-"], [class*=" icon-feather-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'Feather-Icons' !important;
@@ -7684,4 +7686,3 @@
 .icon-material-outline-where-to-vote:before {
   content: "\e992";
 }
-/*# sourceMappingURL=icons.css.map */
