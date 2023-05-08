@@ -59,15 +59,27 @@ def index(request):
 @login_required(login_url='signin')
 def upload(request):
     if request.method == 'POST':
-        user = request.user
+        user = request.user.id
         image = request.FILES.get('image_upload')
         caption = request.POST['caption']
 
         new_post = Post.objects.create(user=user, image=image, caption=caption)
         new_post.save()
 
-    else:
-        return redirect('/')
+    return redirect('/')
+
+# @login_required(login_url='signin')
+# def upload(request):
+#     if request.method == 'POST':
+#         user = request.user.id
+#         image = request.FILES.get('image_upload')
+#         caption = request.POST['caption']
+
+#         new_post = Post.objects.create(user=user, image=image, caption=caption)
+#         new_post.save()
+
+#     else:
+#         return redirect('/')
 
 @login_required(login_url='signin')
 def search(request):
