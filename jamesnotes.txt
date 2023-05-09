@@ -4,4 +4,4 @@ password is password
 
 user_post_length line 65 in main/views.py 'user_post_length': user_post_length,
 
-Test1: passTword23
+Test1: Pass1word!
