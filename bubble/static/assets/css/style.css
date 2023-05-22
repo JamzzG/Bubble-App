@@ -18,6 +18,11 @@ button {
   vertical-align: middle;
 }
 
+.toggle-list {
+  background-color: green
+}
+
+
 span.button, button.button {
   background-color: #be185d;
   top: 0;
@@ -2535,4 +2540,9 @@ header .uk-dropdown {
     position: absolute;
   }
 }
- 
+
+
+.triok {
+  background-color: green;
+  color: red;
+}
