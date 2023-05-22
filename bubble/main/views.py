@@ -14,6 +14,36 @@ def index(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
 
+    feed = []
+
+    # Retrieve all posts
+    all_posts = Post.objects.all()
+
+    for post in all_posts:
+        feed.append(post)
+
+    # user suggestion starts
+    all_users = User.objects.all()
+    current_user = User.objects.filter(username=request.user.username)
+    final_suggestions_list = [x for x in all_users if x != current_user]
+    random.shuffle(final_suggestions_list)
+
+    username_profile_list = []
+
+    for user in final_suggestions_list:
+        profile_lists = Profile.objects.filter(id_user=user.id)
+        username_profile_list.append(profile_lists)
+
+    suggestions_username_profile_list = list(chain(*username_profile_list))
+
+    return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
+
+
+@login_required(login_url='signin')
+def subscribed(request):
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+
     user_following_list = []
     feed = []
 
@@ -54,7 +84,8 @@ def index(request):
     suggestions_username_profile_list = list(chain(*username_profile_list))
 
 
-    return render(request, 'index.html', {'user_profile': user_profile, 'posts':feed_list, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
+    return render(request, 'subscribed_view.html', {'user_profile': user_profile, 'posts':feed_list, 'suggestions_username_profile_list': suggestions_username_profile_list[:4]})
+
 
 @login_required(login_url='signin')
 def upload(request):
@@ -185,7 +216,7 @@ def settings(request):
             user_profile.location = location
             user_profile.save()
         
-        return redirect('settings')
+        return redirect('/')
     return render(request, 'setting.html', {'user_profile': user_profile})
 
 def signup(request):

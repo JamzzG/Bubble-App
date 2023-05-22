@@ -2474,3 +2474,9 @@ body{  font-family: inter, sans-serif !important
 
 @media (min-width: 1536px){
 }
+
+button .purple {
+  background-color: green;
+  font-size: x-large;
+  color: red;
+}
