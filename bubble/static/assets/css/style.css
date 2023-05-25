@@ -8,7 +8,7 @@
  
 
 body{
-  background-color: #B0B3B8!important;
+  background-color: purple;
 }
 
 /* ---------------------------------- */
@@ -17,11 +17,6 @@ body{
 button {
   vertical-align: middle;
 }
-
-.toggle-list {
-  background-color: green
-}
-
 
 span.button, button.button {
   background-color: #be185d;
@@ -628,6 +623,7 @@ a:focus, a:hover {
 }
 
 img {
+  object-fit: cover;
   max-width: 100%;
 }
 
@@ -1559,7 +1555,7 @@ header .header_inner {
   padding: 0 30px;
 }
 
-header .header_inner .left-side {
+header .header_inner .left-side, .search{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2541,8 +2537,66 @@ header .uk-dropdown {
   }
 }
 
+.logo {
+  font-size: 2rem;
+  padding-right: 20px;
+  color: purple;
+}
 
-.triok {
-  background-color: green;
-  color: red;
+.search {
+  margin-left: 10px;
+}
+
+.post-view a {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: whitesmoke;
+  color: purple;
+  font-weight: 900;
+}
+
+.upload {
+  color: white;
+  background-color: purple;
+}
+
+.logo-img {
+  width: 20rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-small {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 1rem;
+}
+
+.follower {
+  margin-left: auto;
+  margin-right: 5rem;
+  background-color: whitesmoke;
+  color: purple;
+  font-weight: 900;
+}
+
+.follower a,button {
+  margin-right: 5rem;
+  font-size: 1rem;
+ 
+}
+
+
+.toggle-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: auto;
 }

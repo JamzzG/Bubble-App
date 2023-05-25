@@ -8,7 +8,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
     <title>Sign In to Bubble</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,8 +30,8 @@
 
                 <div class="flex items-center lg:justify-between justify-around">
 
-                    <a href="trending.html">
-                       <b><h1 style="font-size: 1.5rem;">Bubble</h1></b>
+                    <a href="/">
+                        <b><h1 style="font-size: 1.5rem;">Bubble</h1></b>
                     </a>
 
                     <div class="capitalize flex font-semibold hidden lg:block my-2 space-x-3 text-center text-sm">
@@ -43,13 +42,12 @@
                 </div>
             </div>
         </div>
-
-        <!-- Content-->
         <div>
             <div class="lg:p-12 max-w-md max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
+                <div>
+                    <img src="{% static '/images/bubble_logo.png' %}" " alt="Bubble app logo" class="logo-img">
+                </div>
                 <h1 class="lg:text-3xl text-xl font-semibold  mb-6"> Log in</h1>
-
-
                 <div>
                     <style>
                         h5{
