@@ -1,0 +1,12 @@
+{% for post in user_posts %}
+  <div class="post">
+    <a href="{% url 'post_detail' pk=post.pk %}">
+      <img src="{{ post.image.url }}" alt="{{ post.caption }}">
+      <h2>{{ post.caption }}</h2>
+      <p>{{ post.user.username }} posted on {{ post.created_at }}</p>
+      <p>Likes: {{ post.likes.count }}</p>
+      <p>Comments: {{ post.comments.count }}</p>
+    </a>
+  </div>
+{% endfor %}
+
